@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ESA 2 - 2D Geometrie aus Linien</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<h1>ESA 2 - 2D Geometrie aus Linien</h1>
+<canvas id="glCanvas" width="500" height="500"></canvas>
+<div id="adjustments">
+    <label for="fingerLength">Mittelfinger Länge:</label>
+    <input type="text" id="fingerLength" value="0.7">
+    <button id="updateButton" onclick="updateFingerLength()">Update</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+
+<style lang="css">
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: beige;
+        text-align: center;
+    }
+    #glCanvas {
+        border-radius: 2rem;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        margin-top: 1rem;
+    }
+    #adjustments {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    input {
+        width: 2vw;
+        margin: 1rem;
+        padding: 10px 20px;
+        border-radius: 10px;
+    }
+    #updateButton {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 10px;
+        background-color: #007BFF;
+        color: white;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    #updateButton:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
+    }
+</style>
+</html>
