@@ -102,7 +102,7 @@ function drawScene(gl, programInfo, buffers) {
 
   {
     const offset = 0;
-    const vertexCount = 34; // Anzahl der Vertices
+    const vertexCount = 27; // Anzahl der Vertices
     gl.drawArrays(gl.LINE_STRIP, offset, vertexCount);
   }
 }
@@ -135,9 +135,15 @@ function main(fingerLength = 0.7) {
   drawScene(gl, programInfo, buffers);
 }
 
-function updateFingerLength() {
-  const fingerLength = parseFloat(document.getElementById('fingerLength').value);
-  main(fingerLength);
-}
+window.onload = () => {
+  const fingerLengthInput = document.getElementById('fingerLength');
+  const fingerLengthValue = document.getElementById('fingerLengthValue');
 
-window.onload = () => main();
+  fingerLengthInput.addEventListener('input', (event) => {
+    const fingerLength = parseFloat(event.target.value);
+    fingerLengthValue.textContent = fingerLength.toFixed(2);
+    main(fingerLength);
+  });
+
+  main(parseFloat(fingerLengthInput.value));
+};

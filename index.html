@@ -13,8 +13,8 @@
 <canvas id="glCanvas" width="500" height="500"></canvas>
 <div id="adjustments">
     <label for="fingerLength">Mittelfinger Länge:</label>
-    <input type="text" id="fingerLength" value="0.7">
-    <button id="updateButton" onclick="updateFingerLength()">Update</button>
+    <input type="range" id="fingerLength" min="0.5" max="1.0" step="0.01" value="0.7">
+    <span id="fingerLengthValue">0.7</span>
 </div>
 
 <script src="script.js"></script>
@@ -35,25 +35,10 @@
         margin-left: auto;
         margin-right: auto;
     }
-    input {
-        width: 2vw;
+    input[type="range"] {
+        width: 50%;
         margin: 1rem;
         padding: 10px 20px;
-        border-radius: 10px;
-    }
-    #updateButton {
-        padding: 10px 20px;
-        font-size: 16px;
-        border: none;
-        border-radius: 10px;
-        background-color: #007BFF;
-        color: white;
-        cursor: pointer;
-        transition: background-color 0.3s, transform 0.3s;
-    }
-    #updateButton:hover {
-        background-color: #0056b3;
-        transform: scale(1.05);
     }
 </style>
 </html>
